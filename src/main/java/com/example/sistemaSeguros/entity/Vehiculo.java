@@ -17,17 +17,17 @@ public class Vehiculo {
     private Long vehiculoId;
 
     @Column(name = "placa", nullable = false)
-    private String vehiculoPlaca;
+    private String vehiculo_Placa;
 
     @Column(name = "marca", nullable = false)
-    private String vehiculoMarca;
+    private String vehiculo_Marca;
 
     @Column(name = "modelo", nullable = false)
-    private String vehiculoModelo;
+    private String vehiculo_Modelo;
 
     @Column(name = "ano", nullable = false)
-    private int vehiculoAno;
+    private int vehiculo_Ano;
 
     @Column(name = "color", nullable = false)
-    private String vehiculoColor;
+    private String vehiculo_Color;
 }

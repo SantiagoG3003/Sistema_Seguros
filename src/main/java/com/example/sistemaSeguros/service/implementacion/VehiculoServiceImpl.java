@@ -30,10 +30,10 @@ public class VehiculoServiceImpl implements VehiculoService {
         Vehiculo vehiculoBD = vehiculoRepository.findById(vehiculoId)
                 .orElseThrow(() -> new RuntimeException("Vehiculo no encontrado"));
 
-        vehiculoBD.setVehiculoPlaca(vehiculo.getVehiculoPlaca());
-        vehiculoBD.setVehiculoMarca(vehiculo.getVehiculoMarca());
-        vehiculoBD.setVehiculoModelo(vehiculo.getVehiculoModelo());
-        vehiculoBD.setVehiculoColor(vehiculo.getVehiculoColor());
+        vehiculoBD.setVehiculo_Placa(vehiculo.getVehiculo_Placa());
+        vehiculoBD.setVehiculo_Marca(vehiculo.getVehiculo_Marca());
+        vehiculoBD.setVehiculo_Modelo(vehiculo.getVehiculo_Modelo());
+        vehiculoBD.setVehiculo_Color(vehiculo.getVehiculo_Color());
 
         return vehiculoRepository.save(vehiculoBD);
     }

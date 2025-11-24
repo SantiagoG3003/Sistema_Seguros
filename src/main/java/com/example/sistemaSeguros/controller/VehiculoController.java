@@ -32,10 +32,10 @@ public class VehiculoController {
     public ResponseEntity<?> updateVehiculo(@PathVariable Long vehiculoId, @RequestBody Vehiculo vehiculo) {
         try {
                 Vehiculo updateVehiculo = new Vehiculo();
-                updateVehiculo.setVehiculoPlaca(vehiculo.getVehiculoPlaca());
-                updateVehiculo.setVehiculoMarca(vehiculo.getVehiculoMarca());
-                updateVehiculo.setVehiculoModelo(vehiculo.getVehiculoModelo());
-                updateVehiculo.setVehiculoColor(vehiculo.getVehiculoColor());
+                updateVehiculo.setVehiculo_Placa(vehiculo.getVehiculo_Placa());
+                updateVehiculo.setVehiculo_Marca(vehiculo.getVehiculo_Marca());
+                updateVehiculo.setVehiculo_Modelo(vehiculo.getVehiculo_Modelo());
+                updateVehiculo.setVehiculo_Color(vehiculo.getVehiculo_Color());
 
                 Vehiculo vehiculoDB = vehiculoService.updateVehiculo(vehiculoId, updateVehiculo);
                 return ResponseEntity.ok(vehiculoDB);
