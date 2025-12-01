@@ -26,7 +26,7 @@ public class Vehiculo {
     private String vehiculo_Modelo;
 
     @Column(name = "ano", nullable = false)
-    private int vehiculo_Ano;
+    private Integer vehiculoAno;
 
     @Column(name = "color", nullable = false)
     private String vehiculo_Color;

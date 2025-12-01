@@ -9,26 +9,27 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
+@Table(name = "seguro")
 public class Seguro {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idSeguro")
-    private Long SeguroId;
+    @Column(name = "idseguro")
+    private Long seguroId;
 
     @OneToOne
-    @JoinColumn (name = "idVehiculo",referencedColumnName = "idVehiculo")
+    @JoinColumn(name = "id_vehiculo", referencedColumnName = "idVehiculo")
     private Vehiculo vehiculo;
 
-    @Column(name = "compañia", nullable = false)
+    @Column(name = "compania", nullable = false)
     private String companiaSeguro;
 
-    @Column(name = "numeroPoliza", nullable = false)
+    @Column(name = "numero_poliza", nullable = false)
     private String polizaSeguro;
 
-    @Column(name = "fechaInicio", nullable = false)
+    @Column(name = "fecha_inicio", nullable = false)
     private String fechaInicioSeguro;
 
-    @Column(name = "fechaVencimiento", nullable = false)
+    @Column(name = "fecha_vencimiento", nullable = false)
     private String fechaVencimientoSeguro;
 }

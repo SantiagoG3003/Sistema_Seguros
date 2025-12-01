@@ -7,19 +7,23 @@ import com.example.sistemaSeguros.repository.VehiculoRepository;
 import com.example.sistemaSeguros.service.SeguroService;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public class SeguroServicelmpl implements SeguroService {
+@Service
+public class SeguroServiceImpl implements SeguroService {
 
     @Autowired
     private SeguroRepository seguroRepository;
 
+    @Autowired
+    private VehiculoRepository vehiculoRepository;
+
+    @Override
     public List<Seguro> getSegurosByVehiculo(Long vehiculoId) {
         return seguroRepository.findByVehiculo_VehiculoId(vehiculoId);
     }
-    @Autowired
-    private VehiculoRepository vehiculoRepository;
 
     @Override
     public Seguro registerSeguro(Seguro seguro) {
@@ -74,4 +78,3 @@ public class SeguroServicelmpl implements SeguroService {
         return updateSeguro(seguroId, seguro);
     }
 }
-

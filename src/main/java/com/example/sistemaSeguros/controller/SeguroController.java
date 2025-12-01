@@ -39,21 +39,24 @@ public class SeguroController {
     @PutMapping("/update/{seguroId}")
     public ResponseEntity<?> updateSeguro(@PathVariable Long seguroId, @RequestBody Seguro seguro) {
         try {
-            // Crear nuevo objeto para actualizar
             Seguro updateSeguro = new Seguro();
-            updateSeguro.setVehiculo(seguro.getVehiculo());
+
+            updateSeguro.setSeguroId(seguro.getSeguroId());
+
             updateSeguro.setCompaniaSeguro(seguro.getCompaniaSeguro());
             updateSeguro.setPolizaSeguro(seguro.getPolizaSeguro());
             updateSeguro.setFechaInicioSeguro(seguro.getFechaInicioSeguro());
             updateSeguro.setFechaVencimientoSeguro(seguro.getFechaVencimientoSeguro());
 
             Seguro seguroDB = seguroService.updateSeguro(seguroId, updateSeguro);
+
             return ResponseEntity.ok(seguroDB);
 
         } catch (Exception exception) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exception.getMessage());
         }
     }
+
 
     @DeleteMapping("/delete/{seguroId}")
     public ResponseEntity<?> deleteSeguro(@PathVariable Long seguroId) {
